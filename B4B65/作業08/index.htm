@@ -47,7 +47,7 @@
 	var fruit01 = new fruit("【幸福a+】玉女小番茄禮盒（3斤/盒）",650, 0);
 	var fruit02 = new fruit(" 彰化早春優級葡萄(2公斤)水梨(8入)",699, 0);
 	var fruit03 = new fruit("【天天75折】拉拉山洪家水蜜桃(10粒裝)",880, 0);
-	var fruit0 = new fruit(" 日日好稼 茂谷柑27A 20斤手提禮盒",1575, 0);
+	var fruit04 = new fruit(" 日日好稼 茂谷柑27A 20斤手提禮盒",1575, 0);
 
 function shoppingInfo() {
 	var x = document.getElementById("form01");
@@ -80,7 +80,7 @@ for (i =5; i<= 11; i++){
 	                  fruit03.subTotal(fruit03.no);
 	                  break;
 			 case 11: fruit04.no = x.elements[i+1].value;
-	                  sumToPay += fruit03.Price * fruit03.no;
+	                  sumToPay += fruit04.Price * fruit03.no;
 	                  fruit03.subTotal(fruit04.no);
 	                  break;
 	      }
