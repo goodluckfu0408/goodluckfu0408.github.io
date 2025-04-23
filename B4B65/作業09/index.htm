@@ -51,10 +51,6 @@
         <input type="radio" name="fruit" id="fruit02" value="有機木瓜(6台斤)">有機木瓜(6台斤) 435元<br>
         <input type="radio" name="fruit" id="fruit03" value="黑鑽石桑葚(5台斤)">黑鑽石桑葚(5台斤) 749元<br>
 		<input type="radio" name="fruit" id="fruit03" value="嘉義極光哈密瓜(2顆)(4-6台斤)">嘉義極光哈密瓜(2顆)(4-6台斤)1099<br>
-
-		售價 $1099
-		
-		配送台">黑鑽石桑葚(5台斤) 749元<br>
     </form>
     <br>
     <button onclick="shoppingInfo()"><h4>結帳</h4></button>
@@ -100,6 +96,9 @@
                             break;
                         case 7:
                             price = 749;
+                            break;
+						case 9:
+                            price = 1099;
                             break;
                     }
                     text += "<tr><td>水果種類:</td><td>" + x.elements[i].value + "</td></tr>";
