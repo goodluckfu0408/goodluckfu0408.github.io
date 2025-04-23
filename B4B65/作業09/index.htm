@@ -18,15 +18,19 @@
         }
         table {
             border-collapse: collapse;
-            width: 520px;
-            margin-top: 10px;
-            font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+            font-family: "Microsoft JhengHei", sans-serif;
             font-size: 16px;
         }
         td {
-            border: 2px solid #0000FF; /* 深藍實線，與圖片一致 */
-            padding: 6px 10px;
-            color: black;
+            border: 1px solid blue;
+            padding: 4px 8px;
+            white-space: nowrap;
+        }
+        td:nth-child(1) {
+            color: brown;
+        }
+        td:nth-child(2), td:nth-child(3) {
+            color: blue;
         }
     </style>
 </head>
@@ -59,26 +63,28 @@
             let text = "<h4>您的購物資訊如下:</h4>";
             text += "<table>";
 
+            // 基本資訊輸出
             for (let i = 0; i < 5; i++) {
                 switch (i) {
                     case 0: item = "姓名:"; break;
-                    case 1: item = "收件住址:"; break;
+                    case 1: item = "收件地址:"; break;
                     case 2: item = "電話:"; break;
                     case 3: item = "電子郵件:"; break;
                     case 4: item = "指定送貨日期:"; break;
                 }
-                text += "<tr><td>" + item + "</td><td>" + x.elements[i].value + "</td></tr>";
+                text += "<tr><td>" + item + "</td><td>" + x.elements[i].value + "</td><td></td></tr>";
             }
 
+            // 水果與價格
             for (let i = 5; i <= 7; i++) {
-                if (x.elements[i].checked) {
+                if (x.elements[i].checked === true) {
                     switch (i) {
                         case 5: price = 475; break;
                         case 6: price = 435; break;
                         case 7: price = 749; break;
                     }
-                    text += "<tr><td>水果種類:</td><td>" + x.elements[i].value + "</td></tr>";
-                    text += "<tr><td>價格合計:</td><td>" + price + "元</td></tr>";
+                    text += "<tr><td>水果種類:</td><td>" + x.elements[i].value + "</td><td></td></tr>";
+                    text += "<tr><td>價格合計:</td><td>" + price + "元</td><td></td></tr>";
                 }
             }
 
