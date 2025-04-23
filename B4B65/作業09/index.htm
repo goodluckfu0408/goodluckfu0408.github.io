@@ -66,7 +66,9 @@
 	                item = "指定送貨日期: ";
 	                break;
 	        }
-	        text += item + x.elements[i].value + "<br>";
+			text += "<td>" + item +"</td>";
+	        text += "<td>" + x.elements[i].value + "</td>";
+			text += "</tr>";
 	    }
 	    for (i =5; i<= 7; i++){
 	        if (x.elements[i].checked == true){
@@ -81,10 +83,17 @@
 	                price = 749;
 	                break;
 	            }
-	            text += "水果種類:" + x.elements[i].value + "<br>";
-	            text += "價格合計:" + price + "元<br>";
+				text += "<tr>";
+	            text += "<td>" + "水果種類:" + "</td>";
+				text += "<td>" + x.elements[i].value + "</td>";
+				text += "</tr>";
+				text += "<tr>";
+	            text += "<td>" + "價格合計:" + "</td>";
+				text += "<td>" + price + "元<br>";
+				text += "</tr>";
 	        }
 	    }
+		text += "</table>";
 	    document.getElementById("demo").innerHTML = text;
 	}
 
