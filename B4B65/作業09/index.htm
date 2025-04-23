@@ -19,13 +19,14 @@
         }
         table {
             border-collapse: collapse;
-            width: 30%;
-            margin-top: 5px;
+            width: 500px;
+            margin-top: 10px;
+            color: black;
         }
         td {
             border: 1px solid blue;
-            padding: 5px;
-            color: black;
+            padding: 5px 10px;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -60,37 +61,21 @@
 
             for (let i = 0; i < 5; i++) {
                 switch (i) {
-                    case 0:
-                        item = "姓名:";
-                        break;
-                    case 1:
-                        item = "收件地址:";
-                        break;
-                    case 2:
-                        item = "電話:";
-                        break;
-                    case 3:
-                        item = "電子郵件:";
-                        break;
-                    case 4:
-                        item = "指定送貨日期:";
-                        break;
+                    case 0: item = "姓名:"; break;
+                    case 1: item = "收件住址:"; break;
+                    case 2: item = "電話:"; break;
+                    case 3: item = "電子郵件:"; break;
+                    case 4: item = "指定送貨日期:"; break;
                 }
                 text += "<tr><td>" + item + "</td><td>" + x.elements[i].value + "</td></tr>";
             }
 
             for (let i = 5; i <= 7; i++) {
-                if (x.elements[i].checked == true) {
+                if (x.elements[i].checked) {
                     switch (i) {
-                        case 5:
-                            price = 475;
-                            break;
-                        case 6:
-                            price = 435;
-                            break;
-                        case 7:
-                            price = 749;
-                            break;
+                        case 5: price = 475; break;
+                        case 6: price = 435; break;
+                        case 7: price = 749; break;
                     }
                     text += "<tr><td>水果種類:</td><td>" + x.elements[i].value + "</td></tr>";
                     text += "<tr><td>價格合計:</td><td>" + price + "元</td></tr>";
