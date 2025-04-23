@@ -14,19 +14,19 @@
             color: brown;
         }
         div {
-            color: blue;
             margin: 5px;
         }
         table {
             border-collapse: collapse;
-            width: 500px;
+            width: 520px;
             margin-top: 10px;
-            color: black;
+            font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+            font-size: 16px;
         }
         td {
-            border: 1px solid blue;
-            padding: 5px 10px;
-            font-size: 16px;
+            border: 2px solid #0000FF; /* 深藍實線，與圖片一致 */
+            padding: 6px 10px;
+            color: black;
         }
     </style>
 </head>
@@ -54,9 +54,9 @@
     <script>
         function shoppingInfo() {
             const x = document.getElementById("form01");
-            var item = "";
-            var price = 0;
-            var text = "<h4>您的購物資訊如下:</h4>";
+            let item = "";
+            let price = 0;
+            let text = "<h4>您的購物資訊如下:</h4>";
             text += "<table>";
 
             for (let i = 0; i < 5; i++) {
