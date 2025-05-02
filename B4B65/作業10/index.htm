@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>作業08</title>
+  <title>作業10</title>
   <style>
     h4, h3 { color: red; }
     label { color: blue; }
@@ -31,17 +31,14 @@
     指定送貨日期:<input type="date" name="date01"><br><br>
 
     水果種類:<br>
-    <input type="checkbox" name="fruit" id="fruit01" value="智利藍莓(1盒)">智利藍莓(1盒) 200元;
+    <input type="checkbox" name="fruit" id="fruit01" value="愛文芒果(1箱)">愛文芒果(1箱) 475元;
     購買數量:<input type="number" name="number01" id="num01"><br>
 
-    <input type="checkbox" name="fruit" id="fruit02" value="台灣鳳梨(1顆)">台灣鳳梨(1顆) 100元;
+    <input type="checkbox" name="fruit" id="fruit02" value="有機木瓜(6台斤)">有機木瓜(6台斤) 435元;
     購買數量:<input type="number" name="number02" id="num02"><br>
 
-    <input type="checkbox" name="fruit" id="fruit03" value="美國蘋果(1袋)">美國蘋果(1袋) 300元;
-    購買數量:<input type="number" name="number03" id="num03"><br>
-
-    <input type="checkbox" name="fruit" id="fruit04" value="韓國梨(2粒)">韓國梨(2粒) 250元;
-    購買數量:<input type="number" name="number04" id="num04"><br><br>
+    <input type="checkbox" name="fruit" id="fruit03" value="黑鑽石桑葚(5台斤)">黑鑽石桑葚(5台斤) 749元;
+    購買數量:<input type="number" name="number03" id="num03"><br><br>
   </form>
 
   <button id="submitBtn" onclick="shoppingInfo()"><h4 id="btnText">結帳</h4></button>
@@ -56,15 +53,13 @@
       this.Price = price;
       this.subTotal = function(no) {
         const subtotal = this.Price * no;
-        text += `<tr><td>水果種類:</td><td>${this.Type}</td><td>${no} 單位</td></tr>`;
-        text += `<tr><td>價格小計:</td><td colspan="2">${subtotal} 元</td></tr>`;
+        text += `<tr><td>水果種類:</td><td>${this.Type}</td><td>共 ${no} 單位　小計 ${subtotal} 元</td></tr>`;
       };
     }
 
-    const fruit01 = new fruit("智利藍莓(1盒)", 200);
-    const fruit02 = new fruit("台灣鳳梨(1顆)", 100);
-    const fruit03 = new fruit("美國蘋果(1袋)", 300);
-    const fruit04 = new fruit("韓國梨(2粒)", 250);
+    const fruit01 = new fruit("愛文芒果(1箱)", 475);
+    const fruit02 = new fruit("有機木瓜(6台斤)", 435);
+    const fruit03 = new fruit("黑鑽石桑葚(5台斤)", 749);
 
     function shoppingInfo() {
       event.preventDefault(); // 防止頁面刷新
@@ -88,8 +83,7 @@
       const fruits = [
         { checkbox: "fruit01", qty: "num01", obj: fruit01 },
         { checkbox: "fruit02", qty: "num02", obj: fruit02 },
-        { checkbox: "fruit03", qty: "num03", obj: fruit03 },
-        { checkbox: "fruit04", qty: "num04", obj: fruit04 }
+        { checkbox: "fruit03", qty: "num03", obj: fruit03 }
       ];
 
       fruits.forEach(f => {
