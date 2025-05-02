@@ -55,8 +55,7 @@
       this.Type = type;
       this.Price = price;
       this.subTotal = function(no) {
-        text += `<tr><td>水果種類:</td><td>${this.Type}</td><td>${no} 單位</td></tr>`;
-        text += `<tr><td>價格小計:</td><td>${this.Price * no} 元</td><td></td></tr>`;
+        text += `<tr><td>水果種類:</td><td>${this.Type}</td><td>${no} 單位（小計：${this.Price * no} 元）</td></tr>`;
       };
     }
 
@@ -73,10 +72,10 @@
 
       if (!isSubmitted) {
         text += "<h4>您的購物資訊如下:</h4><table>";
-        document.getElementById("btnText").innerText = "確認修正";
+        document.getElementById("btnText").innerText = "修正購物資訊";
         isSubmitted = true;
       } else {
-        text += "<h4>確認修正，以下為更新後內容:</h4><table>";
+        text += "<h4>您已修正購買資訊，以下為更新後內容:</h4><table>";
       }
 
       // 基本資料
