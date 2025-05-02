@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>作業10</title>
+  <title>作業08</title>
   <style>
     h4, h3 { color: red; }
     label { color: blue; }
@@ -31,14 +31,17 @@
     指定送貨日期:<input type="date" name="date01"><br><br>
 
     水果種類:<br>
-    <input type="checkbox" name="fruit" id="fruit01" value="愛文芒果(1箱)">愛文芒果(1箱) 475元;
+    <input type="checkbox" name="fruit" id="fruit01" value="日本綠葡萄(1盒)">日本綠葡萄(1盒) 4600元;
     購買數量:<input type="number" name="number01" id="num01"><br>
 
-    <input type="checkbox" name="fruit" id="fruit02" value="有機木瓜(6台斤)">有機木瓜(6台斤) 435元;
+    <input type="checkbox" name="fruit" id="fruit02" value="日本枇杷(9粒)">日本枇杷(9粒) 1350元;
     購買數量:<input type="number" name="number02" id="num02"><br>
 
-    <input type="checkbox" name="fruit" id="fruit03" value="黑鑽石桑葚(5台斤)">黑鑽石桑葚(5台斤) 749元;
-    購買數量:<input type="number" name="number03" id="num03"><br><br>
+    <input type="checkbox" name="fruit" id="fruit03" value="日本溫室水蜜桃(5粒)">日本溫室水蜜桃(5粒) 3600元;
+    購買數量:<input type="number" name="number03" id="num03"><br>
+
+    <input type="checkbox" name="fruit" id="fruit04" value="紐西蘭紅梨(8~9粒)">紐西蘭紅梨(8~9粒) 2000元;
+    購買數量:<input type="number" name="number04" id="num04"><br><br>
   </form>
 
   <button id="submitBtn" onclick="shoppingInfo()"><h4 id="btnText">結帳</h4></button>
@@ -57,15 +60,16 @@
       };
     }
 
-    const fruit01 = new fruit("愛文芒果(1箱)", 475);
-    const fruit02 = new fruit("有機木瓜(6台斤)", 435);
-    const fruit03 = new fruit("黑鑽石桑葚(5台斤)", 749);
+    const fruit01 = new fruit("日本綠葡萄(1盒)", 4600);
+    const fruit02 = new fruit("日本枇杷(9粒)", 1350);
+    const fruit03 = new fruit("日本溫室水蜜桃(5粒)", 3600);
+    const fruit04 = new fruit("紐西蘭紅梨(8~9粒)", 2000);
 
     function shoppingInfo() {
-      event.preventDefault(); // 防止頁面刷新
+      event.preventDefault();
       let x = document.getElementById("form01");
       let sumToPay = 0;
-      text = ""; // 重置內容
+      text = "";
 
       if (!isSubmitted) {
         text += "<h4>您的購物資訊如下:</h4><table>";
@@ -83,7 +87,8 @@
       const fruits = [
         { checkbox: "fruit01", qty: "num01", obj: fruit01 },
         { checkbox: "fruit02", qty: "num02", obj: fruit02 },
-        { checkbox: "fruit03", qty: "num03", obj: fruit03 }
+        { checkbox: "fruit03", qty: "num03", obj: fruit03 },
+        { checkbox: "fruit04", qty: "num04", obj: fruit04 }
       ];
 
       fruits.forEach(f => {
