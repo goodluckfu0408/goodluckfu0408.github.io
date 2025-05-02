@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>作業10</title>
+  <title>作業08</title>
   <style>
     h4, h3 { color: red; }
     label { color: blue; }
@@ -55,7 +55,9 @@
       this.Type = type;
       this.Price = price;
       this.subTotal = function(no) {
-        text += `<tr><td>水果種類:</td><td>${this.Type}</td><td>${no} 單位（小計：${this.Price * no} 元）</td></tr>`;
+        const subtotal = this.Price * no;
+        text += `<tr><td>水果種類:</td><td>${this.Type}</td><td>${no} 單位</td></tr>`;
+        text += `<tr><td>價格小計:</td><td colspan="2">${subtotal} 元</td></tr>`;
       };
     }
 
@@ -65,10 +67,10 @@
     const fruit04 = new fruit("韓國梨(2粒)", 250);
 
     function shoppingInfo() {
-      event.preventDefault(); // 防止表單送出刷新頁面
+      event.preventDefault(); // 防止頁面刷新
       let x = document.getElementById("form01");
       let sumToPay = 0;
-      text = ""; // 每次點擊都重設 text
+      text = ""; // 重置內容
 
       if (!isSubmitted) {
         text += "<h4>您的購物資訊如下:</h4><table>";
@@ -78,13 +80,11 @@
         text += "<h4>您已修正購買資訊，以下為更新後內容:</h4><table>";
       }
 
-      // 基本資料
       const labels = ["姓名:", "收件地址:", "電話:", "電子郵件:", "指定送貨日期:"];
       for (let i = 0; i < 5; i++) {
         text += `<tr><td>${labels[i]}</td><td>${x.elements[i].value}</td><td></td></tr>`;
       }
 
-      // 水果處理
       const fruits = [
         { checkbox: "fruit01", qty: "num01", obj: fruit01 },
         { checkbox: "fruit02", qty: "num02", obj: fruit02 },
