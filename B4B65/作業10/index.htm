@@ -9,14 +9,13 @@
     input { color: brown; }
     div { color: blue; margin: 5px; }
     table {
-      border-color: dodgerblue;
-      border-style: solid;
+      border: 2px solid dodgerblue;
       border-collapse: collapse;
     }
-    td:nth-child(1), td:nth-child(2), td:nth-child(3) {
+    td {
       text-align: left;
-      border-style: solid;
-      border-color: dodgerblue;
+      border: 1px solid dodgerblue;
+      padding: 5px;
     }
     td:nth-child(1) { color: brown; }
     td:nth-child(2), td:nth-child(3) { color: blue; }
@@ -56,7 +55,8 @@
       this.Price = price;
       this.subTotal = function(no) {
         const subtotal = this.Price * no;
-        text += `<tr><td>水果種類:</td><td>${this.Type}</td><td>共 ${no} 單位 ｜ 小計 ${subtotal} 元</td></tr>`;
+        text += `<tr><td>水果種類:</td><td>${this.Type}</td><td>共 ${no} 單位</td></tr>`;
+        text += `<tr><td></td><td colspan="2">小計 ${subtotal} 元</td></tr>`;
       };
     }
 
@@ -81,7 +81,7 @@
 
       const labels = ["姓名:", "收件地址:", "電話:", "電子郵件:", "指定送貨日期:"];
       for (let i = 0; i < 5; i++) {
-        text += `<tr><td>${labels[i]}</td><td>${x.elements[i].value}</td><td></td></tr>`;
+        text += `<tr><td>${labels[i]}</td><td colspan="2">${x.elements[i].value}</td></tr>`;
       }
 
       const fruits = [
@@ -100,7 +100,7 @@
         }
       });
 
-      text += `<tr><td><h3>價格合計:</h3></td><td>${sumToPay} 元</td><td></td></tr>`;
+      text += `<tr><td><h3>價格合計:</h3></td><td colspan="2">${sumToPay} 元</td></tr>`;
       text += "</table>";
       document.getElementById("demo").innerHTML = text;
     }
